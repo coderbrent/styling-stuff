@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" type="text/css" href="/Users/brentabruzese/Desktop/style.css">
+</head>
+
+<body>
+    <div class="box_1">
+        <section>
+            <table>
+              <tbody id="table1">
+                <thead>
+                </thead>
+                    <th id="col_1">
+                        Hello World
+                    </th>
+                        <tr>
+                            <td id="row_1">
+                                Hello World
+                            </td>
+                            <td>
+                                Brent Abruzese
+                            </td>
+                            <td>
+                                Lily Abruzese
+                            </td>
+                        </tr>
+            </table>
+        </tbody>
+        </section>
+
+    <div class="container">
+      <h3>Style Settings</h3>
+        <select size ="4" onchange="ChangeTextTrans (this);">
+            <option selected="selected"/>none
+            <option />Capitalize
+            <option />UPPERCASE
+            <option />lowercase
+        </select>
+    </div>
+
+      <button id="button_center" onclick="text_center()">Center Text</button>
+      <button id="button_left" onclick="text_left()">Align Left</button>
+      <button id="button_right" onclick="text_right()">Align Right</button>
+      <button id="button_strong" onclick="text_strong()"><strong>BOLD</strong></button>
+      <button id="button_field_add" onclick="addRow()">+ Row</button>
+
+<script>
+
+  let text_center = () => {
+        document.getElementById("row_1").style.textAlign = "center";
+    }
+
+    let text_right = () => {
+        document.getElementById("row_1").style.textAlign = "right";
+    }
+
+    function text_left() {
+        document.getElementById("row_1").style.textAlign = "left";
+    }
+
+    let text_strong = () => {
+        document.getElementById("col_1").style.text = "strong";
+    }
+
+    function ChangeTextTrans (selectTag) {
+        var whichSelected = selectTag.selectedIndex;
+
+        var transValue = selectTag.options[whichSelected].text;
+
+        var div = document.getElementById("col_1");
+        div.style.textTransform = transValue;
+    }
+
+    function addRow() {
+        var row = document.createElement("tr");
+        node.appendChild("row_1");
+        document.getElementById("row_1").appendChild(row);
+    }
+</script>
+
+</body>
+</html>
